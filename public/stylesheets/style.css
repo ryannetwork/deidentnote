@@ -1,0 +1,50 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.noteText {
+
+}
+
+#display {
+	width:80%; 
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	padding: 20px;
+}
+
+.wrapper { 
+  border : 2px solid #000; 
+  overflow:hidden;
+}
+
+.wrapper div {
+   min-height: 200px;
+   padding: 10px;
+}
+#note_rpt_txt {
+  background-color: lightgray;
+  float:left; 
+  margin-right:20px;
+  width:40%;
+  /*border-right:2px solid #000; */
+  padding: 10px;
+}
+#note_rpt_txt_deid { 
+  background-color: white;
+  overflow:hidden;
+  margin:10px;
+  width:40%;
+  border:2px dashed #ccc;
+  min-height:170px;
+  padding: 10px;
+}

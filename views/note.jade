@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  div#wrapper
+    #note_rpt_txt.noteText
+      h2 Identified Note
+      p!= note.note_rpt_txt.replace(/\. /g, ".<br />\r\n")
+    #note_rpt_txt_deid.noteText
+      h2 DeIdentified Note
+      p!=  note.note_rpt_txt_deid.replace(/\. /g, ".<br />\r\n")
