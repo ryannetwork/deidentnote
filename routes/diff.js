@@ -3,11 +3,12 @@ var router = express.Router();
 var fs = require('../util/loadFile');
 var myRequest = require('request');
 
-//const notes = convertFile('DeIdentNotes.txt')
+const notes = convertFile('DeIdentNotes.txt')
 
 
 /* GET Note By ID directy from CRDW. */
 router.get('/:id', function(req, res, next) {
+
 	var noteId = req.params.id
 	//res.send(JSON.stringify(notes[noteId]));
 
@@ -22,7 +23,7 @@ router.get('/:id', function(req, res, next) {
         if (!error && response.statusCode == 200) {
             var bodyObj = JSON.parse(body);
             //console.log(bodyObj)
-            res.render('diff', { title: "Deidentified Note Viewer", note: bodyObj });
+            res.render('diff', { title: "Deidentified Note Viewer",  note: bodyObj, notes: notes });
 
         } else {
         	res.render('error', { error: error })
@@ -35,16 +36,17 @@ router.get('/:id', function(req, res, next) {
 router.get('/old/:id', function(req, res, next) {
 	var noteId = req.params.id
 	//res.send(JSON.stringify(notes[noteId]));
-	res.render('diff', { note: notes[noteId] });
+	res.render('diff', {root: rootPath,  note: notes[noteId] });
 
 });
 
 
 router.post('/', function(req, res, next) {
+	
+
 	var noteId = parseInt(req.body.noteid)
-	console.log("POST")
 	if (noteId > 0) {
-		res.redirect('/diff/' + noteId );
+		res.redirect(  '../diff/' + noteId );
 	} else {
 		res.render('error', { error: 'error in note id'})
 	}

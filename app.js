@@ -1,21 +1,30 @@
 var createError = require('http-errors');
 var express = require('express');
+var hbs = require('hbs');
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var noteRouter = require('./routes/note');
+//var noteRouter = require('./routes/note');
 var diffRouter = require('./routes/diff');
-var usersRouter = require('./routes/users');
+//var usersRouter = require('./routes/users');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
 //app.set('view engine', 'jade');
+
 app.set('view engine', 'hbs');
 
+hbs.registerHelper('contextPath', function() { return "/deident" });
+hbs.registerPartials(path.join(__dirname , 'views/partials') );
+
+
+app.set('view cache', false) 
 
 app.use(logger('dev'));
 app.use(express.json());

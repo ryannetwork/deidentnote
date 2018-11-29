@@ -1,19 +1,19 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
-
-<form action="/diff/" method="POST">
+<!--
+<form action="{{contextPath}}/diff/" method="POST">
 	<div class="form-group">
 		<label for="noteid">Note ID:</label>
 		<input id="noteid" type="text" placeholder="Enter Note ID" name="noteid" class="form-contorl">
 		<button type="submit" class="btn btn-primary">View </button>
 	</div>
 </form>
-
-<p>
+-->
+<p>Enter a note ID above, or you can select one of the random notes below to view.</p>
 <ul>
   {{#each notes}}
   <li>
-    <a href="/diff/{{this.ID}}">{{this.ID}} {{this.note_type}}</a> {{this.note_dts}}
+    <a href="{{contextPath}}/diff/{{ID}}">{{note_type}}</a> {{note_dts}}
   </li>
   {{/each}}
 </ul>
