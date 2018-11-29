@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<form action="/diff/" method="POST">
+	<div class="form-group">
+		<label for="noteid">Note ID:</label>
+		<input id="noteid" type="text" placeholder="Enter Note ID" name="noteid" class="form-contorl">
+		<button type="submit" class="btn btn-primary">View </button>
+	</div>
+</form>
+
+<p>
+<ul>
+  {{#each notes}}
+  <li>
+    <a href="/diff/{{this.ID}}">{{this.ID}} {{this.note_type}}</a> {{this.note_dts}}
+  </li>
+  {{/each}}
+</ul>

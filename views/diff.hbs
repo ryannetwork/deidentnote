@@ -1,0 +1,16 @@
+  <h1>'{{note.noteType}}' De-Identified</h1>
+  <p> Date: {{note.noteDts}}
+  <pre id="display"></pre>
+
+  <div id="wrapper">
+    <div id="note_rpt_txt" class="noteText">
+      <h2>Identified Note</h2>
+      <p id="ident">{{note.noteText}}</p>
+    </div>
+    <div id="note_rpt_txt_deid" class="noteText">
+      <h2>DeIdentified Note</h2>
+      <p id="deid">{{note.noteRptTxtDeid}}</p>
+    </div>
+  </div>
+  <script type="text/javascript" src="/javascripts/diff.js"></script> 
+

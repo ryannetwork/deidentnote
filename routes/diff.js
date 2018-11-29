@@ -22,7 +22,7 @@ router.get('/:id', function(req, res, next) {
         if (!error && response.statusCode == 200) {
             var bodyObj = JSON.parse(body);
             //console.log(bodyObj)
-            res.render('diff', { note: bodyObj });
+            res.render('diff', { title: "Deidentified Note Viewer", note: bodyObj });
 
         } else {
         	res.render('error', { error: error })
