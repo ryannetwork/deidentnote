@@ -6,6 +6,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+
 var indexRouter = require('./routes/index');
 //var noteRouter = require('./routes/note');
 var diffRouter = require('./routes/diff');
@@ -20,9 +22,15 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'hbs');
 
-hbs.registerHelper('contextPath', function() { return "/deident" });
+//hbs.registerHelper('contextPath', function() { return "/deident" });
 hbs.registerPartials(path.join(__dirname , 'views/partials') );
 
+hbs.localsAsTemplateData(app);
+
+app.use(function(req, res, next) { 
+	res.locals.contextPath = req.headers['x-deident-name'] || "";
+	return next();
+})
 
 app.set('view cache', false) 
 
@@ -52,5 +60,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

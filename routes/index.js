@@ -10,7 +10,7 @@ const notes = convertFile('DeIdentNotes.txt')
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  res.render('index', { title: 'Deidentified Clinic Notes',  notes: notes });
+  res.render('index', { title: 'Deidentified Clinic Notes',   notes: notes });
 });
 
 module.exports = router;
