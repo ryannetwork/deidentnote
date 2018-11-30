@@ -13,7 +13,7 @@ This is a NodeJS and Express web application that displays Differences between I
 
 ## Access the Page 
 
-Open a browser and connect to [http://localhost:3032/](LocalHost)
+Open a browser and connect to [LocalHost](http://localhost:3032/)
 
 
 
