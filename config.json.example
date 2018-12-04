@@ -1,0 +1,15 @@
+
+{
+	"session": {
+		"secret": "keyboard cat"
+	},
+	"ldap": {
+		"domain": "server.com",
+		"root": "dc=ldap,dc=server,dc=com",
+		"url": "ldaps://ldap.server.com:3269/",
+		"bind": { 
+			"user": "USERNAME",
+			"password": "BLAHBLAH"
+			}
+	}
+}

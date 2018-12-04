@@ -32,6 +32,12 @@ router.get('/:id', function(req, res, next) {
 	
 });
 
+/* GET home page. */
+router.get('/', function(req, res, next) {
+
+  res.render('index', { title: 'Deidentified Clinic Notes',   notes: notes });
+});
+
 /* GET Note By ID from 500 Random notes. */
 router.get('/old/:id', function(req, res, next) {
 	var noteId = req.params.id
