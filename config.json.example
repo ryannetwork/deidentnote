@@ -3,7 +3,14 @@
 	"session": {
 		"secret": "keyboard cat"
 	},
+	"note": {
+		"url" : "http://localhost:9292/clinicnote/"
+	},
+	"deidentify": {
+		"url" : "http://localhost:8082"
+	}, 
 	"ldap": {
+		"authGroup" : "FULL_CN_OF_GROUP", 
 		"domain": "server.com",
 		"root": "dc=ldap,dc=server,dc=com",
 		"url": "ldaps://ldap.server.com:3269/",
